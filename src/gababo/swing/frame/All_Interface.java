@@ -21,15 +21,13 @@ public interface All_Interface {
 	public static OneLabel one_button_게임종료하기		= new OneLabel(All_img.panel1_button_게임종료하기,130,60,605,460);	
 	
 	public static TwoPanel 	   Two_panel 		  	= new TwoPanel(new Color(255,255,205));
-	public static TwoLabel_png Two_label 		  	= new TwoLabel_png(All_img.panel2_function,750,510,10,20);
-	public static TwoLabel_png Two_label_text_back1	= new TwoLabel_png(All_img.panel2_label_png_back,720,400,35,20);
-	public static TwoLabel_png Two_label_text_back2	= new TwoLabel_png(All_img.panel2_label_png_back,720,400,35,25);
-	public static TwoLabel_gif Two_lavel_check    	= new TwoLabel_gif(All_img.panel2_label_gif_check,100,100,100,100);
-	public static TwoLabel_gif Two_lavel_writer	  	= new TwoLabel_gif(All_img.panel2_label_gif_write,100,60,200,100);
-	public static TwoLabel_gif Two_label_inputnon 	= new TwoLabel_gif(All_img.panel2_label_gif_null,100,60,300,100);	
-	public static TwoLabel_gif Two_label_loll 		= new TwoLabel_gif(All_img.panel2_label_gif_loll,100,60,300,100);	
-	public static TwoTextFieid text 				= new TwoTextFieid(100,100,100,100);
-	public static TwoPassFieid pass 				= new TwoPassFieid(200,200,200,200);
+	public static TwoLabel_png Two_label 		  	= new TwoLabel_png(All_img.panel2_function,750,510,15,30);
+	public static TwoLabel_gif Two_lavel_check    	= new TwoLabel_gif(All_img.panel2_label_gif_check,100,100,0,100);
+	public static TwoLabel_gif Two_lavel_writer	  	= new TwoLabel_gif(All_img.panel2_label_gif_write,100,100,0,0);
+	public static TwoLabel_gif Two_label_inputnon 	= new TwoLabel_gif(All_img.panel2_label_gif_null,100,100,0,0);	
+	public static TwoLabel_gif Two_label_loll 		= new TwoLabel_gif(All_img.panel2_label_gif_loll,100,100,0,0);	
+	public static TwoTextFieid text 				= new TwoTextFieid(280,60,150,200);
+	public static TwoPassFieid pass 				= new TwoPassFieid(280,60,150,300);
 	
 	
 	public static void panel_add() {
@@ -51,14 +49,14 @@ public interface All_Interface {
 		one_panel.add(one_button_게임종료하기);
 		
 		Two_panel.add(Two_label);
-		Two_panel.add(Two_label_text_back1);
-		Two_panel.add(Two_label_text_back2);
 		Two_panel.add(text);
 		Two_panel.add(pass);
-		
-		
-		
+		Two_panel.add(Two_lavel_check);
+		Two_panel.add(Two_lavel_writer);
+		Two_panel.add(Two_label_inputnon);
+		Two_panel.add(Two_label_loll);
 	}
+	
 	
 	
 	
