@@ -1,6 +1,6 @@
 //making 정석 강, 강정석
 
-package gababo;
+package gababo.logic;
 
 public class Comparison extends Total {
 	

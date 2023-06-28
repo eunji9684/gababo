@@ -1,6 +1,6 @@
 //making 정우김, 김정우
 
-package gababo;
+package gababo.logic;
 
 public class String_Filter {
 	String name;

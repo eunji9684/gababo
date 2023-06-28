@@ -1,6 +1,6 @@
 //making 한규 김, 김한규
 
-package gababo;
+package gababo.logic;
 
 public class Email_Filter {
 

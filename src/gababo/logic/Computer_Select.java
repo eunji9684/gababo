@@ -1,6 +1,6 @@
 //making 티비잇꿀, 황은지
 
-package gababo;
+package gababo.logic;
 
 public class Computer_Select {
 	

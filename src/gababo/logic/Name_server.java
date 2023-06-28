@@ -1,6 +1,6 @@
 //making 정우 김, 김정우
 
-package gababo;
+package gababo.logic;
 
 public class Name_server {
 	
