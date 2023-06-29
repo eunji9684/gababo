@@ -19,7 +19,7 @@ public class TwoPassFieid extends JPasswordField{
 	public TwoPassFieid(int width , int height, int locationX, int locationY){
 		
 		setFont(getFont().deriveFont(Font.PLAIN, 30));
-		setBorder(new EmptyBorder(10, 20, 10, 20));
+		setBorder(new EmptyBorder(10, 20, 10, 50));
 		//setBackground(new Color(0, 0, 0, 0));
 		setVisible(true);
 		setOpaque(false);
