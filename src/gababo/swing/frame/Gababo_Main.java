@@ -13,8 +13,9 @@ public class Gababo_Main {
 		All_Interface.main_frame.setVisible(true);
 		All_Interface.one_panel.setVisible(false);
 		All_Interface.Two_panel.setVisible(false);
-		All_Interface.Three_panel.setVisible(true);
+		All_Interface.Three_panel.setVisible(false);
 		All_Interface.four_panel.setVisible(false);
+		All_Interface.Five_panel.setVisible(true);
 		
 	}
 }

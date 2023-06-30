@@ -23,6 +23,8 @@ public interface All_img {
 	
 	ImageIcon panel4_function 				= new ImageIcon("src/img/4.패널4_function.png");
 	
-	
-	
+	ImageIcon panel5_function 				= new ImageIcon("src/img/5.패널5_function.png");
+	ImageIcon panel5_label_user 	   		= new ImageIcon("src/img/5.user.gif");
+	ImageIcon panel5_label_com				= new ImageIcon("src/img/5.com.gif");  // 계산기 깨짐
+	ImageIcon panel5_label_chat				= new ImageIcon("src/img/5.채팅창.png");  // 계산기 깨짐
 }

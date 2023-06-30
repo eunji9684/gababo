@@ -6,7 +6,7 @@ import gababo.swing.panel_01.*;
 import gababo.swing.panel_02.*;
 import gababo.swing.panel_03.*;
 import gababo.swing.panel_04.*;
-//import gababo.swing.panel_05.*;
+import gababo.swing.panel_05.*;
 
 public interface All_Interface {
 
@@ -62,15 +62,22 @@ public interface All_Interface {
 	public static ThreeLabel Three_button_메인가기 	= new ThreeLabel(All_img.panel2_label_png_메인화면가기,130,60,350,410);
 	public static ThreeLabel Three_button_회원가입 	= new ThreeLabel(All_img.panel1_button_회원가입,130,60,220,410);
 	
-	public static FourPanel    four_panel 		  	= new FourPanel(new Color(255,255,205));
-	public static FourLabel    four_label 		  	= new FourLabel(All_img.panel4_function,810,570,-10,0);
+	public static FourPanel  four_panel 		  	= new FourPanel(new Color(255,255,205));
+	public static FourLabel  four_label 		  	= new FourLabel(All_img.panel4_function,810,570,-10,0);
 	
+	public static FivePanel  Five_panel 		  	= new FivePanel(new Color(255,255,205));
+	public static FiveLabel  Five_label 		  	= new FiveLabel(All_img.panel5_function,810,570,-10,0);
+	
+	public static FiveLabel  Five_label_user 		= new FiveLabel(All_img.panel5_label_user,320,310,50,125);
+	public static FiveLabel  Five_label_com 		= new FiveLabel(All_img.panel5_label_com ,221,55,520,130);
+	public static FiveLabel  Five_Label_chat 		= new FiveLabel(All_img.panel5_label_chat,780,170,12,390);
 	
 	public static void panel_add() {
 		main_frame.add(one_panel);
 		main_frame.add(Two_panel);
 		main_frame.add(Three_panel);
 		main_frame.add(four_panel);
+		main_frame.add(Five_panel);
 	
 	}
 	
@@ -79,6 +86,7 @@ public interface All_Interface {
 		Two_panel.add(Two_label);
 		Three_panel.add(Three_label);	
 		four_panel.add(four_label);	
+		Five_panel.add(Five_label);	
 	}
 	
 	public static void button_add() {
@@ -113,6 +121,10 @@ public interface All_Interface {
 		Three_label.add(Three_button_메인가기);
 		Three_label.add(Three_button_종료하기);
 		Three_label.add(Three_button_회원가입);
+		
+		Five_label.add(Five_label_user);
+		Five_label.add(Five_label_com);
+		Five_label.add(Five_Label_chat);
 		
 	}
 	
