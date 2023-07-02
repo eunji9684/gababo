@@ -4,6 +4,11 @@ package gababo.logic;
 
 public class Comparison extends Total {
 	
+	private int totalplay;
+	private int winR;
+	private int drawR;
+	private int loseR;
+	
 	public Comparison() {};
 	
 	public String message(String user, String com) {

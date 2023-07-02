@@ -3,13 +3,16 @@
 package gababo.logic;
 
 public class Email_Filter {
-
 	
 		String id;
 		
 		private Email_Filter(){};
 		
-		public Email_Filter(String id){this.id = id;}	
+		public Email_Filter(String id){
+			
+			this.id = id;
+
+		}	
 		
 		public boolean id_filter() {
 			

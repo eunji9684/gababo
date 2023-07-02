@@ -6,15 +6,29 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.Shape;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.geom.RoundRectangle2D;
 
-import javax.swing.ImageIcon;
 import javax.swing.JTextField;
+import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
+
+import gababo.logic.Email_Filter;
+import gababo.logic.Name_server;
+import gababo.swing.frame.All_Interface;
 
 public class TwoTextFieid extends JTextField{
 
+	int width;
+	int height;
+	
 	public TwoTextFieid(int width , int height, int locationX, int locationY){
+		
+		this.width = width;
+		this.height = height;
 		
 		setForeground(Color.black);
 		setFont(getFont().deriveFont(Font.BOLD, 30));
@@ -22,12 +36,38 @@ public class TwoTextFieid extends JTextField{
 		//setBackground(new Color(0, 0, 0, 0));
 		setVisible(true);
 		setOpaque(false);
-		
-		
 		setSize(width, height);
 		setLocation(locationX,locationY);
 		
+		addKeyListener(new KeyAdapter() {
+			   @Override
+	            public void keyReleased(KeyEvent e) {
+				  if(new Email_Filter(new Name_server(getText()).name()).id_filter()){
+					  
+					  All_Interface.Two_중복검사.setVisible(true); 
+					  
+					  if(isEditable()) {
+						
+						  All_Interface.Two_설명.set_Text("중복검사 버튼을 눌러주세요");
+
+					  }
+					   
+				  }
+				  else {
+					  
+					  All_Interface.Two_중복검사.setVisible(false); 					  
+	
+					  if(getText().length() == 0) {}
+					  else {All_Interface.Two_설명.set_Text(new Email_Filter(new Name_server(getText()).name()).getmessage());
+					  
+					  }
+				  }
+				  
+				  
+			}
+     	});
 	}
+	
 	
 	
 	@Override
