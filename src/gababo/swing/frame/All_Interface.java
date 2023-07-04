@@ -5,6 +5,7 @@ import java.awt.Color;
 import gababo.logic.Name_server;
 import gababo.logic.RankSystem;
 import gababo.logic.logic_interface;
+import gababo.sql.Crypt;
 import gababo.sql.File_Writer;
 import gababo.sql.File_modify;
 import gababo.swing.panel_01.OneLabel;
@@ -29,6 +30,10 @@ import gababo.swing.panel_06.SixLabel_String;
 import gababo.swing.panel_06.SixPanel;
 import gababo.swing.panel_07.SevenLabel;
 import gababo.swing.panel_07.SevenPanel;
+import gababo.swing.panel_08.EightLabel;
+import gababo.swing.panel_08.EightPanel;
+import gababo.swing.panel_08.EightPassFieid;
+import gababo.swing.panel_08.Eight_String;
 
 public interface All_Interface {
 
@@ -107,20 +112,30 @@ public interface All_Interface {
 	public static FourPanel  four_panel 		  	= new FourPanel(new Color(255,255,205));
 	public static FourLabel  four_label 		  	= new FourLabel(new Runnable(){public void run(){}},All_img.panel4_function,810,570,-10,0);
 	
-	public static FourLabel_String  four_rank1 		= new FourLabel_String("",400,20,65,195);
-	public static FourLabel_String  four_rank2 		= new FourLabel_String("",400,20,65,225);
-	public static FourLabel_String  four_rank3 		= new FourLabel_String("",400,20,65,255);
-	public static FourLabel_String  four_rank4 		= new FourLabel_String("",400,20,65,285);
-	public static FourLabel_String  four_rank5 		= new FourLabel_String("",400,20,65,315);
-	public static FourLabel_String  four_rank6 		= new FourLabel_String("",400,20,65,345);
-	public static FourLabel_String  four_rank7 		= new FourLabel_String("",400,20,65,375);
-	public static FourLabel_String  four_rank8 		= new FourLabel_String("",400,20,65,405);
-	public static FourLabel_String  four_rank9 		= new FourLabel_String("",400,20,65,435);
-	public static FourLabel_String  four_rank10 	= new FourLabel_String("",400,20,65,465);
+	public static FourLabel_String  four_rank1 		= new FourLabel_String("",600,20,65,195);
+	public static FourLabel_String  four_rank2 		= new FourLabel_String("",600,20,65,225);
+	public static FourLabel_String  four_rank3 		= new FourLabel_String("",600,20,65,255);
+	public static FourLabel_String  four_rank4 		= new FourLabel_String("",600,20,65,285);
+	public static FourLabel_String  four_rank5 		= new FourLabel_String("",600,20,65,315);
+	public static FourLabel_String  four_rank6 		= new FourLabel_String("",600,20,65,345);
+	public static FourLabel_String  four_rank7 		= new FourLabel_String("",600,20,65,375);
+	public static FourLabel_String  four_rank8 		= new FourLabel_String("",600,20,65,405);
+	public static FourLabel_String  four_rank9 		= new FourLabel_String("",600,20,65,435);
+	public static FourLabel_String  four_rank10 	= new FourLabel_String("",600,20,65,465);
 	
-	public static FourLabel  four_label_종료하기 		= new FourLabel(new Runnable(){public void run(){logic_interface.게임종료();}},All_img.panel2_label_png_게임종료하기,130,60,630,460);
-	public static FourLabel  four_label_내림차순 		= new FourLabel(new Runnable(){public void run(){new RankSystem().playRank_reversed();}},All_img.panel4_내림차순,130,60,480,380);
-	public static FourLabel  four_label_오름차순 		= new FourLabel(new Runnable(){public void run(){new RankSystem().playRank();}},All_img.panel4_오름차순,130,60,630,380);
+	public static FourLabel  four_label_종료하기 		= new FourLabel(new Runnable(){public void run(){
+		
+		if(logic_interface.id[0] == "0"){}
+		else {new File_modify().modify();}
+		
+		logic_interface.게임종료();}},All_img.panel2_label_png_게임종료하기,130,60,660,480);
+	public static FourLabel  four_label_내림차순 		= new FourLabel(new Runnable(){public void run(){new RankSystem().playRank();}},All_img.panel4_내림차순,130,60,660,340);
+	public static FourLabel  four_label_오름차순 		= new FourLabel(new Runnable(){public void run(){new RankSystem().playRank_reversed();}},All_img.panel4_오름차순,130,60,660,270);
+	
+	public static FourLabel  four_label_퍼센테이지오름		= new FourLabel(new Runnable(){public void run(){new RankSystem().playRank_ASC();}},All_img.panel4_승률올림,130,60,660,200);
+	public static FourLabel  four_label_퍼센테이지내림 		= new FourLabel(new Runnable(){public void run(){new RankSystem().playRank_DESC();}},All_img.panel4_승률내림,130,60,660,130);
+	
+	
 	
 	
 	public static FourLabel  four_label_메인가기 		= new FourLabel(new Runnable(){public void run(){
@@ -128,7 +143,7 @@ public interface All_Interface {
 		if(logic_interface.id[0] == "0"){}
 		else {new File_modify().modify();}
 		
-		logic_interface.메인페이지();}},All_img.panel2_label_png_메인화면가기,130,60,480,460);
+		logic_interface.메인페이지();}},All_img.panel2_label_png_메인화면가기,130,60,660,410);
 	
 	public static FivePanel  Five_panel 		  	= new FivePanel(new Color(255,255,205));
 	public static FiveLabel  Five_label 		  	= new FiveLabel(new Runnable(){public void run(){}},All_img.panel5_function,810,570,-10,0);
@@ -155,16 +170,19 @@ public interface All_Interface {
 		logic_interface.게임종료();}},All_img.panel2_label_png_게임종료하기,130,50,20,23);
 	public static SixLabel   Six_button_메인가기 	    = new SixLabel(new Runnable(){public void run(){logic_interface.메인페이지();}},All_img.panel2_label_png_메인화면가기,130,50,190,23);
 	
+	public static SixLabel   Six_button_계속하기 	    = new SixLabel(new Runnable(){public void run(){logic_interface.thread_stop[0] = true; logic_interface.전투모션(); }},All_img.panel7_label_게임시작,130,130,45,430);
+	
 	public static SevenPanel Seven_panel 		  	= new SevenPanel(new Color(255,255,255,255));
 	public static SevenLabel Seven_label	 	 	= new SevenLabel(new Runnable(){public void run(){}},All_img.panel1_function,720,400,35,25);
 	
 	public static SevenLabel Seven_button_로그아웃 		= new SevenLabel(new Runnable(){public void run(){
-		
+		logic_interface.id[0] = "0";
+				
 		if(logic_interface.id[0] == "0"){}
 		else {new File_modify().modify();}
 		
 		logic_interface.메인페이지();}},All_img.panel7_label_로그아웃,130,60,235,460);
-	public static SevenLabel Seven_button_승률보기 		= new SevenLabel(new Runnable(){public void run(){logic_interface.인원별승률보기();}},All_img.panel1_button_승률보기,130,60,415,460);
+	public static SevenLabel Seven_button_승률보기 		= new SevenLabel(new Runnable(){public void run(){logic_interface.인원별승률보기();}},All_img.panel1_button_승률보기,130,60,415,480);
 	public static SevenLabel Seven_button_게임종료하기	= new SevenLabel(new Runnable(){public void run(){
 		
 		if(logic_interface.id[0] == "0"){}
@@ -172,6 +190,20 @@ public interface All_Interface {
 		
 		logic_interface.게임종료();}},All_img.panel1_button_게임종료하기,130,60,605,460);	
 	public static SevenLabel Seven_button_상자		= new SevenLabel(new Runnable(){public void run(){logic_interface.전투모션();}},All_img.panel7_label_게임시작,130,130,45,430);	
+	
+	public static EightPanel Eight_패널				= new EightPanel(new Color(255,255,255,255));
+	public static EightLabel Eight_회원탈퇴배경			= new EightLabel(new Runnable(){public void run(){}},null,800,670,0,0);	
+	public static Eight_String Eight_설명라벨 		  	= new Eight_String("회원탈퇴가 필요하시면 버튼을 누른후 패스워드를 입력해 주세요",700,60,10,10);
+	public static EightLabel Eight_탈퇴버튼			= new EightLabel(new Runnable(){public void run(){ All_Interface.Eight_탈퇴버튼.setVisible(false); All_Interface.Eight_pass.setVisible(true); All_Interface.Eight_진짜탈퇴합니까.setVisible(true);}},All_img.panel8_label_회원탈퇴,130,60,300,80);	
+	public static EightLabel Eight_탈퇴이동			= new EightLabel(new Runnable(){public void run(){logic_interface.회원탈퇴화면();}},All_img.panel8_label_회원탈퇴,130,60,415,420);	
+	
+	public static EightLabel Eight_진짜탈퇴합니까   	= new EightLabel(new Runnable(){public void run() {new File_modify().아이디삭제(new Crypt().encryptPass(Eight_pass.getText()).toString());		
+	}},All_img.panel8_label_삭제,370,60,180,350);
+	
+	
+	
+	public static EightPassFieid Eight_pass         = new EightPassFieid(480,60,120,250);
+	
 	
 	public static void panel_add() {
 		main_frame.add(one_panel);
@@ -181,6 +213,7 @@ public interface All_Interface {
 		main_frame.add(Five_panel);
 		main_frame.add(Six_panel);
 		main_frame.add(Seven_panel);
+		main_frame.add(Eight_패널);
 	}
 	
 	public static void label_add() {
@@ -191,6 +224,7 @@ public interface All_Interface {
 		Five_panel.add(Five_label);
 		Six_panel.add(Six_label);
 		Seven_panel.add(Seven_label);
+		Eight_패널.add(Eight_회원탈퇴배경);
 	}
 	
 	public static void button_add() {
@@ -240,6 +274,8 @@ public interface All_Interface {
 		
 		four_label.add(four_label_오름차순); 
 		four_label.add(four_label_내림차순);
+		four_label.add(four_label_퍼센테이지오름);
+		four_label.add(four_label_퍼센테이지내림);
 		
 		Five_label.add(Five_label_user);
 		Five_label.add(Five_label_com);
@@ -252,11 +288,19 @@ public interface All_Interface {
 		
 		Six_label.add(Six_label_box);
 		Six_label.add(Six_label_lose);
+		Six_label.add(Six_button_계속하기);
 		
 		Seven_panel.add(Seven_button_로그아웃);
 		Seven_panel.add(Seven_button_게임종료하기);
 		Seven_panel.add(Seven_button_승률보기);
 		Seven_panel.add(Seven_button_상자);
+		Seven_panel.add(Eight_탈퇴이동);
+		
+		Eight_회원탈퇴배경.add(Eight_설명라벨 );
+		Eight_회원탈퇴배경.add(Eight_탈퇴버튼 );
+		Eight_회원탈퇴배경.add(Eight_진짜탈퇴합니까);
+		Eight_회원탈퇴배경.add(Eight_pass); 
+		
 	}
 	
 	public static void icon_add(){
@@ -274,6 +318,9 @@ public interface All_Interface {
 		Six_label_box.add(Six_button_메인가기);
 		
 	}
+	
+	
+	
 	
 	
 }

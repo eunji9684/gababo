@@ -28,6 +28,8 @@ public interface All_img {
 	ImageIcon panel4_function 				= new ImageIcon("src/img/4.패널4_function.png");
 	ImageIcon panel4_오름차순 					= new ImageIcon("src/img/4.오름차순.png");
 	ImageIcon panel4_내림차순 					= new ImageIcon("src/img/4.내림차순.png");
+	ImageIcon panel4_승률올림 					= new ImageIcon("src/img/4.승률올림.png");
+	ImageIcon panel4_승률내림 					= new ImageIcon("src/img/4.승률내림.png");
 	
 	ImageIcon panel5_function 				= new ImageIcon("src/img/5.패널5_function.png");
 	ImageIcon panel5_label_user 	   		= new ImageIcon("src/img/5.user.gif");
@@ -40,8 +42,11 @@ public interface All_img {
 	ImageIcon panel6_label					= new ImageIcon("src/img/6.우주선.gif");
 	
 	ImageIcon panel7_label_상자				= new ImageIcon("src/img/7.투명.png");
-	ImageIcon panel7_label_로그아웃				= new ImageIcon("src/img/7.로그아웃.png");
-	ImageIcon panel7_label_게임시작			    = new ImageIcon("src/img/7.게임시작.png");
+	ImageIcon panel7_label_로그아웃			= new ImageIcon("src/img/7.로그아웃.png");
+	ImageIcon panel7_label_게임시작			= new ImageIcon("src/img/7.게임시작.png");
+
 	
+	ImageIcon panel8_label_회원탈퇴			= new ImageIcon("src/img/8.회원탈퇴.png");
+	ImageIcon panel8_label_삭제			    = new ImageIcon("src/img/8.삭제.png");
 	
 }

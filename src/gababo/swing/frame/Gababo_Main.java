@@ -9,6 +9,7 @@ public class Gababo_Main {
 		
 		logic_interface.id[0] = "0";
 		new File_Reader().File_read();
+		
 		new RankSystem().playRank_reversed();
 		
 		All_Interface.panel_add();
@@ -19,6 +20,6 @@ public class Gababo_Main {
 		All_Interface.main_frame.setVisible(true);
 		
 		logic_interface.메인페이지();
-
+		//logic_interface.회원탈퇴화면();
 	}
 }
