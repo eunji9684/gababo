@@ -14,7 +14,7 @@ import gababo.swing.frame.All_Interface;
 
 public interface logic_interface {
 	
-	public static ArrayList<String[]> id_pass 		= new ArrayList<>();
+	public static ArrayList<String[]> id_pass = new ArrayList<>();
 	
 	public static String[] id = new String[10];
 	
@@ -209,8 +209,6 @@ public interface logic_interface {
 		
 		Iterator<String[]> id_iter = id_pass.iterator();
 
-		
-		
 		boolean a;
 		
 		do {
